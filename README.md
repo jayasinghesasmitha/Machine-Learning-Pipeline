@@ -1,44 +1,39 @@
-## Machine Learning Pipeline with Python, Scikit-Learn, and Jupyter Notebook
+## Machine Learning Pipeline with Scikit-Learn
 
-This project showcases a machine learning pipeline developed using Python, Scikit-Learn, and Jupyter Notebook. The pipeline includes data preprocessing, model training, evaluation, and prediction.
+### Description
+This repository contains a Machine Learning pipeline built using Python and Scikit-Learn. The pipeline includes data preprocessing, model training, and evaluation.
 
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Pipeline Components](#pipeline-components)
-- [Contributing](#contributing)
-- [License](#license)
+### Features
+- Data preprocessing with `SimpleImputer`
+- Model training using `LogisticRegression`
+- Pipeline creation using `make_pipeline`
+- Hyperparameter tuning and evaluation
 
-## Installation
-To get started, clone this repository and install the required dependencies:
-```bash
-git clone https://github.com/jayasinghesasmitha/Machine-Learning-Pipeline.git
-cd Machine-Learning-Pipeline
-pip install -r requirements.txt
+### Installation
+Ensure you have Python installed, then install the required libraries:
+
+```sh
+pip install scikit-learn pandas numpy jupyter
 ```
 
-## Usage
-Follow these steps to run the pipeline:
-1. Prepare your dataset and place it in the `data` folder.
-2. Open the Jupyter Notebook:
-```bash
-jupyter notebook
+### Usage
+Run the Jupyter Notebook to see the pipeline in action:
+
+```sh
+jupyter notebook pipeline.ipynb
 ```
-3. Open the `pipeline.ipynb` notebook and run the cells sequentially.
-4. The results will be saved in the `output` folder.
 
-## Pipeline Components
-1. **Data Preprocessing**: 
-   - Handling missing values
-   - Feature scaling and encoding
+### Example Code
+```python
+from sklearn.pipeline import make_pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
 
-2. **Model Training**:
-   - Training various machine learning models
-   - Hyperparameter tuning
+# Define components
+imputer = SimpleImputer(strategy="mean")
+lr = LogisticRegression()
 
-3. **Model Evaluation**:
-   - Performance metrics
-   - Cross-validation
-
-4. **Model Prediction**:
-   - Generating predictions on new data
+# Create pipeline
+pipe = make_pipeline(imputer, lr)
+print(pipe)
+```
